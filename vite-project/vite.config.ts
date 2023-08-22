@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-
+import path from 'path'
 // https://vitejs.dev/config/
 export default defineConfig({
   server : {
@@ -8,6 +8,7 @@ export default defineConfig({
   },
   plugins: [react()],
   build : {
+    // 라이브망에선 콘솔 안보이도록 처리 시켜줌
     minify : 'terser',
     terserOptions : {
       compress : {
@@ -15,5 +16,12 @@ export default defineConfig({
         drop_debugger : true,
       },
     }
+  },
+  //절대 경로 설정
+  resolve : {
+    alias: [
+      { find: '@', replacement: path.resolve(__dirname, 'src') },
+      { find: '@pages', replacement: path.resolve(__dirname, 'src/pages') },
+    ]
   }
 })
