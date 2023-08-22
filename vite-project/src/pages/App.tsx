@@ -16,13 +16,14 @@ function App() {
           <Link to="/about">소개</Link><br/>
           <Link to="result">결과</Link><br/>
         </div>
+        <div className="main"> 
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="about" element={<About />} />
+            <Route path="result" element={<Result />} />
+          </Routes>
+        </div>
     </div>
-        
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="about" element={<About />} />
-        <Route path="result" element={<Result />} />
-      </Routes>
     </BrowserRouter>
   );
 }
