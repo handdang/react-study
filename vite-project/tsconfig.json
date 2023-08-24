@@ -19,12 +19,14 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-
+    
+    //없어도 될것같기도..?
     "baseUrl": "src",
     "paths": {
       "@/*": ["*"],
       "@pages/*": ["pages/*"],
-      "@components/*":["components/*"]
+      "@components/*":["components/*"],
+      "~/*": ["assets/*"],
     }
   },
   "include": ["src"],

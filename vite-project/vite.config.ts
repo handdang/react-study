@@ -4,7 +4,11 @@ import path from 'path'
 // https://vitejs.dev/config/
 export default defineConfig({
   server : {
-    port : 8080
+    port : 8080,
+    // 파일 저장시 새로고침
+    watch : {
+      usePolling : true,
+    }
   },
   plugins: [react()],
   build : {
@@ -21,6 +25,7 @@ export default defineConfig({
   resolve : {
     alias: [
       { find: '@', replacement: path.resolve(__dirname, 'src') },
+      { find: '~', replacement: path.resolve(__dirname, 'src/assets/') },
       { find: '@pages', replacement: path.resolve(__dirname, 'src/pages') },
     ]
   }
