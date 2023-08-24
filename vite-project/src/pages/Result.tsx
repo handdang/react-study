@@ -1,5 +1,5 @@
 const Result = () => {
-    return <div><p>흠냐리 ㅠ</p></div>
+    return <div><p>결과</p></div>
 }
 
 export default Result

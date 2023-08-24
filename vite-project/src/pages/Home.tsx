@@ -8,10 +8,10 @@ const Home = () => {
         console.log(videoEl.paused)
         if(videoEl.paused){
             videoEl.play();
-            setTitle('재생');
+            setTitle('정지');
         }else{
             videoEl.pause();
-            setTitle('정지');
+            setTitle('재생');
         }
     }
     const onChange = (e: { target: { value: SetStateAction<string>; }; }) => {
