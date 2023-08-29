@@ -11,7 +11,11 @@ export default defineConfig({
     }
   },
   plugins: [react()],
+  cacheDir : './.vite', //cacheDir 경로 지정 (dev server 실행 시, node_modules가 생성되는 것을 원치 않는다면아래와 같이 cacheDir을 설정해준다.)
   build : {
+    rollupOptions : {
+      
+    },
     // 라이브망에선 콘솔 안보이도록 처리 시켜줌
     minify : 'terser',
     terserOptions : {
